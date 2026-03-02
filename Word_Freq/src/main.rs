@@ -1,20 +1,26 @@
 fn most_frequent_word(text: &str) -> (String, usize) {
-    let mut word_count = std::collections::HashMap::new();
+    let words: Vec<&str> = text.split_whitespace().collect();
 
-    for word in text.split_whitespace() {
-        *word_count.entry(word.to_string()).or_insert(0) += 1;
-    }
-
-    let mut max_word = String::new();
+    let mut max_word = "";
     let mut max_count = 0;
 
-    for (word, count) in word_count {
+    for i in 0..words.len() {
+        let current_word = words[i];
+        let mut count = 0;
+
+        for j in 0..words.len() {
+            if words[j] == current_word {
+                count += 1;
+            }
+        }
+
         if count > max_count {
-            max_word = word;
             max_count = count;
+            max_word = current_word;
         }
     }
-    (max_word, max_count)
+
+    (max_word.to_string(), max_count)
 }
 
 fn main() {
