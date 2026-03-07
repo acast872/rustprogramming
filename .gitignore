@@ -7,3 +7,6 @@
 /Word_Freq/target/
 /Word_Freq/Cargo.toml
 /Word_Freq/Cargo.lock
+/Book_Cat/target/
+/Book_Cat/Cargo.toml
+/Book_Cat/Cargo.lock
