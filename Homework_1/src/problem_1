@@ -1,0 +1,15 @@
+fn farenheit_to_celsius(f: f64) -> f64 {
+    (f - 32.0) * 5.0 / 9.0
+}
+fn celsius_to_farenheit(c: f64) -> f64 {
+    (c * 9.0 / 5.0) + 32.0
+}
+
+fn main() {
+    for temp in [32.0, 68.0, 100.0, 200.0, 1000.0].iter(){
+        let c = farenheit_to_celsius(*temp);
+        let f = celsius_to_farenheit(c);
+        println!("Temperature in Celsius: {},", c);
+        println!("Temperature in Farenheit: {},", f);
+    }    
+}
